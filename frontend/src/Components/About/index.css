@@ -1,0 +1,119 @@
+.about-c {
+  padding: 20px;
+  height: 100%;
+  width: 100vw;
+  background-color: #120014;
+  overflow-y: auto; /* Changed from scroll to auto (scrollbar appears only if needed) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hiden;
+}
+.spidey-c {
+  position: fixed;
+  top: 60px;
+  right: -10px;
+  pointer-events: none; /* So it doesn't block clicks */
+  z-index: 1; /* Sends it behind everything */
+  overflow:hidden;
+}
+
+.spidey {
+  position: relative;
+  top: 0;
+
+  width: 300px;
+  opacity: 0.8;
+    animation: swing 25s ease-in-out infinite;
+
+}
+
+/* Smooth swinging animation */
+@keyframes swing {
+  0% {
+    transform: translateY(-100%);
+  }
+  10% {
+    transform: translateY(-50%);
+  }
+  20% {
+    transform: translateY(0%);
+  }
+  30% {
+    transform: translateY(0%) rotate(5deg);
+  }
+  35% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: translateY(-5%) rotate(5deg);
+  }
+  45% {
+    transform: translateY(-30%) rotate(-5deg);
+  }
+  55% {
+    transform: translateY(-60%) rotate(2deg);
+  }
+  65% {
+    transform: translateY(-120%) rotate(-1deg);
+  }
+  70% {
+    transform: translateY(0%) rotate(1deg);
+  }
+  80% {
+    transform: translateY(-50%) rotate(-1deg);
+  }
+  90% {
+    transform: translateY(-100%);
+  }
+  100%{
+     transform: translateY(-100%);
+  }
+}
+
+
+.about-marvel {
+   
+  color: white;
+  margin-top: 20px; /* Add spacing between sections */
+  text-align: center; /* Improves readability */
+  width: 90%;
+}
+
+.marvel-vid {
+  height: 70vh;
+  width: 100%;
+  pointer-events: none; /* Disables mouse interactions */
+}
+.about-headings {
+  text-align: left;
+ text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #9300ee, #6b00f7, #ff00dd, #9036a2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 450px) {
+  .about-headings {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+    margin-top: 0px;
+  }
+  .text-base{
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+  .spidey {
+    display: none; /* Adjust size for smaller screens */
+  }
+}
+
+@media (max-width: 450px){
+  .about-headings{
+    font-size: 1.5rem;
+  }
+}

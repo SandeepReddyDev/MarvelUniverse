@@ -1,0 +1,165 @@
+.footer {
+  background-color: #340139;
+  color: white;
+  padding: 3rem 2rem;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feedback-section {
+  flex: 1 1 250px;
+  margin-bottom: 2rem;
+  z-index: 5;
+}
+.footer-feedback-quote {
+ 
+  font-style: italic;
+  font-size: 2.0rem;
+  color: #cbbfe3;
+  font-family: "Satisfy" !important;
+  margin-bottom: 10px;
+}
+.feedback-form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+   
+    width: 100%;
+   
+    margin: 0 auto;
+}
+.feedback-input{
+    height: 30px;
+    width: 90%;
+    padding: 0.5rem;
+    border: 1px solid #d004aa;
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+    margin-bottom:5px ;
+}
+.feedback-textarea{
+    height: 30%;
+    width: 90%;
+    padding: 0.5rem;
+    border: 1px solid #d004aa;
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.footer-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.footer-title span {
+  color: #f89dbb;
+}
+
+.footer-desc {
+  margin-top: 1rem;
+  max-width: 250px;
+}
+
+.footer-socials {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.icon-circle {
+  background-color: white;
+  color: #4b3a87;
+  padding: 0.6rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-links {
+  flex: 1 1 150px;
+  margin-bottom: 2rem;
+}
+
+.footer-links h3 {
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8rem;
+}
+
+.footer-links li {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.contact-text {
+  display: inline-block;
+  max-width: 180px;
+}
+
+.scroll-top {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #f89dbb;
+  border: none;
+  border-radius: 50%;
+  padding: 0.8rem;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  z-index: 4;
+}
+.deadpool-t{
+    bottom: 0;
+    position: absolute;
+    align-self: center;
+    opacity: 0.5;
+    z-index: 0;
+    height: 500px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.feedback-btn {
+  background: linear-gradient(135deg, #d004aa, #7f41ff);
+  color: white;
+  border: none;
+padding: 5px;
+  border-radius: 5px;
+z-index: 5;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.feedback-btn:hover {
+  background: linear-gradient(135deg, #ff6fc4, #9d6bff);
+}
+
+
+@media (max-width:450px){
+  .footer-feedback-quote{
+    font-size: 1.4rem;
+  }
+}

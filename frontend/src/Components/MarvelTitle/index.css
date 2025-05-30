@@ -1,0 +1,107 @@
+.title-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+  background-size: 400% 400%;
+  background-size: cover;
+  overflow: hidden;
+  position: sticky;
+  transition: all 0.3s ease-in-out;
+}
+.title-container:hover {
+  transform: scale(1.05);
+ 
+}
+
+.title-container:hover .letter-m,
+.title-container:hover .letter-a,
+.title-container:hover .letter-r,
+.title-container:hover .letter-v,
+.title-container:hover .letter-e,
+.title-container:hover .letter-l {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Shared MARVEL title styles */
+.marvel-Title {
+  font-size: 15.5rem;
+  font-weight: 900;
+  margin: 0;
+  font-family: sans-serif;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  z-index: 1;
+  position: relative;
+}
+
+/* Individual letters with unique backgrounds */
+.letter-m {
+  background-image: url("https://i.pinimg.com/474x/83/96/43/839643f1f78041101606e2a27cf04b98.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.letter-a {
+  background-image: url("https://i.pinimg.com/474x/e3/29/1d/e3291d55e61b8ea97e07f68750fda26a.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.letter-a:hover {
+  transform: scale(1.1);
+
+  transition: all 0.1s ease-in-out;
+}
+.letter-r {
+  background-image: url("https://i.pinimg.com/736x/6b/cd/97/6bcd978e2fc96100d4b29c866c702f6d.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.letter-v {
+  background-image: url("https://i.pinimg.com/736x/f2/7d/04/f27d0487ded5cbd30533fbaa3a62dd5e.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.letter-e {
+  background-image: url("https://i.pinimg.com/474x/9f/2d/f2/9f2df26501930c28c4ce9a70a1a3746a.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.letter-l {
+  background-image: url("https://i.pinimg.com/474x/bb/0b/e0/bb0be06c6d7cc89494bc7a14ffd22ffa.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 450px) {
+  
+.title-container {
+  margin: 50px;
+     height: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+  .marvel-Title {
+    font-size: 10rem;
+    text-align: center;
+  }
+
+  .letter-m,
+  .letter-a,
+  .letter-r,
+  .letter-v,
+  .letter-e,
+  .letter-l {
+    font-size: 4rem;
+  }
+  
+}

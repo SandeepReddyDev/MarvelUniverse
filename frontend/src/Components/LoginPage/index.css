@@ -1,0 +1,731 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+.change-theme-button {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff4d4d, #4d79ff, #4dff4d, #ff4dff);
+  background-size: 300% 300%;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  transition: width 0.2s ease-in;
+  
+}
+
+.change-theme-button:hover {
+  width: 180px; /* expands horizontally */
+  border-radius: 30px;
+}
+
+.change-theme-button:hover,
+.change-theme-button {
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.changeThemeIcon {
+  font-size: 24px;
+  color: #fff;
+  opacity: 1;
+  transition: transform 0.4s ease;
+}
+
+.change-theme-button:hover .changeThemeIcon {
+  transform: rotate(20deg);
+}
+
+.spanText {
+  font-size: 16px;
+  color: #fff;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: none;
+}
+
+.change-theme-button:hover .spanText {
+  opacity: 1;
+  transform: translateX(0);
+  display: block;
+}
+
+.auth-container {
+  display: flex;
+  width: 850px;
+  height: 450px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.auth-left-panel {
+  flex: 1;
+  color: white;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-btns {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 01s ease-in-out;
+}
+.log-heading {
+  font-size: 45px;
+
+  font-family: "Satisfy";
+  font-weight: bold;
+  animation: bounce 2s linear forwards;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  90% {
+    transform: translateY(0);
+  }
+  93% {
+    transform: translateY(-10%);
+  }
+  95% {
+    transform: translateY(0);
+  }
+  97% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.auth-left-panel p {
+  font-size: 15px;
+  color: #d0dfff;
+
+  font-family: "Satisfy";
+}
+
+.auth-left-panel .logo {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/*auth right panel*/
+.auth-right-panel {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  animation: slideIn 0.6s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: auto;
+}
+
+.auth-input {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+  border-color: #4b0082;
+  outline: none;
+  box-shadow: 0 0 8px rgba(75, 0, 130, 0.2);
+}
+
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  align-items: center;
+}
+
+.forgot-password {
+  color: #4b0082;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #7e22ce;
+}
+
+.auth-button-group {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.auth-button-group button {
+  width: 100px;
+}
+
+.social-login p {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.icons {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s ease;
+}
+
+.icons:hover {
+  transform: scale(1.2);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .auth-right-panel {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .auth-button-group {
+    flex-direction: column;
+  }
+
+  .auth-input {
+    font-size: 0.95rem;
+  }
+
+  .icons {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/*Rainddrops animation*/
+.rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.raindrop {
+  position: absolute;
+  top: -20px;
+  width: 2px;
+  height: 5px;
+  background: rgba(173, 216, 230, 0.7); /* light blue */
+  box-shadow: 0 0 5px rgba(173, 216, 230, 0.7);
+  transform: rotate(45deg);
+  animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100px, 100vh) rotate(85deg);
+    opacity: 0;
+  }
+}
+/* Deadpool animation */
+.bg-deadpool-theme {
+  background: linear-gradient(
+    135deg,
+    #0d0d0d,
+    #361212,
+    #3b0a0a,
+    #5c1e1e,
+    #2e2e2e
+  );
+  background-size: cover;
+}
+.auth-container-bg-deadpool {
+  background: linear-gradient(
+    to top,
+    #520101,
+    #4b0202,
+    transparent,
+    transparent,
+    transparent
+  );
+  background-size: cover;
+  /* Glass effect styles */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.deadpool-btn {
+  background: linear-gradient(to right, #ae0101, #0d0d0d);
+    transition: all 0.2s ease-in-out;
+}
+.deadpool-btn:hover {
+  background: linear-gradient(to right, #ae0101, #ae0101);
+  transform: scale(1.1);
+  
+}
+.deadpool {
+  position: fixed;
+  bottom: -180px;
+  right: -100px;
+  height: auto;
+  z-index: 3;
+  animation: ride 15s linear infinite;
+}
+@keyframes ride {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(-350%);
+  }
+}
+.deadpool-l {
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  width: 80%;
+  height: 300px;
+  animation: up 2s linear;
+  align-self: center;
+}
+@keyframes up {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(5%);
+  }
+}
+
+/*Meteor Sky*/
+.meteor-sky {
+  position: fixed;
+  background: linear-gradient(
+    to bottom,
+    #0f2027,
+    transparent,
+    transparent,
+    transparent
+  );
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* allows clicks to pass through */
+  z-index: 3;
+}
+
+.meteor {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 2px white;
+
+  animation: twinkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateX(-5px);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateX(0px);
+  }
+}
+
+/*Avengers*/
+.bg-avengers-theme {
+  background: linear-gradient(to top, #0f2027, #203a43, #2c5364, #89d4cf);
+  background-size: cover;
+}
+.auth-container-bg-avengers {
+  background: linear-gradient(to top, #89d4cf, transparent, transparent);
+  background-size: cover;
+  /* Glass effect styles */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.avengers-logo {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* shifts the box back by half its width/height to center it */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 700px;
+  width: 500px !important;
+  z-index: 2;
+  animation: fadein 2s linear forwards;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.avengers-btn {
+  background: linear-gradient(to right, #89d4cf, #0f2027);
+    transition: all 0.2s ease-in-out;
+}
+.avengers-btn:hover {
+  background: linear-gradient(to right, #89d4cf, #89d4cf);
+   transform: scale(1.1);
+}
+.ironman {
+  position: fixed;
+  height: 200px;
+  width: auto;
+  left: 70px;
+  top: 120px;
+  animation: flyup 5s linear forwards, flying 5s linear infinite 5s;
+}
+@keyframes flyup {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes flying {
+  0% {
+    transform: translateX(-5px);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+.starc-tower {
+  position: fixed;
+  height: 450px;
+  width: auto;
+  bottom: 0;
+  left: -200px;
+}
+.thor {
+  position: fixed;
+  height: 200px;
+  width: auto;
+  top: 200px;
+  right: 30px;
+  animation: thorfly 5s linear forwards, flying 5s linear infinite 5s;
+}
+
+@keyframes thorfly {
+  0% {
+    transform: translate(200px, 200px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+.cap {
+  position: fixed;
+  height: 200px;
+  width: auto;
+  bottom: -20px;
+  right: 20px;
+  animation: slideup 3s linear forwards;
+}
+.blackwidow {
+  position: fixed;
+  height: 200px;
+  width: auto;
+  bottom: -20px;
+  left: 50px;
+  animation: slideup 3s linear forwards;
+}
+.hawkeye {
+  position: fixed;
+  height: 200px;
+  width: auto;
+  bottom: -20px;
+  left: 150px;
+  animation: slideup 3s linear forwards;
+}
+.hulk {
+  position: fixed;
+  height: 350px;
+  width: auto;
+  bottom: -50px;
+  right: 150px;
+  animation: slideup 3s linear forwards;
+}
+@keyframes slideup {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/*Spiderman theme*/
+
+.bg-spiderman-theme {
+  background: linear-gradient(to bottom, #ff0000, #0000ff);
+  background-size: cover;
+}
+.auth-container-bg-sptheme {
+  background-size: cover;
+  /* Glass effect styles */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+}
+.spidey-btn {
+  background: linear-gradient(to right, #cd1616, #0505d8);
+    transition: all 0.2s ease-in-out;
+}
+.spidey-btn:hover {
+  background: linear-gradient(to right, #0505d8, #0505d8);
+  transform: scale(1.1);
+}
+.spideyonWall {
+  position: fixed;
+  height: 200px;
+  width: auto;
+  top: 120px;
+  right: -10px;
+  animation: slideleft 3s linear forwards;
+}
+@keyframes slideleft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.spideyhang {
+  position: fixed;
+  height: 400px;
+  width: auto;
+  top: 0px;
+  left: 100px;
+  animation: slidedown 5s linear forwards;
+}
+@keyframes slidedown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  85% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(-2%);
+  }
+  100% {
+    transform: translateY(2%);
+  }
+}
+.villan {
+  position: fixed;
+  height: 300px;
+  width: auto;
+  bottom: 0;
+  right: 0;
+  animation: slideup 3s linear forwards;
+}
+.miles {
+  position: fixed;
+  height: 200px;
+  width: auto;
+  bottom: -10px;
+  left: 50px;
+  animation: slideup 3s linear forwards;
+}
+.gwen {
+  position: fixed;
+  height: 200px;
+  width: auto;
+  bottom: -10px;
+  left: 0px;
+  animation: slideup 3s linear forwards;
+}
+.web {
+  position: fixed;
+  height: 200px;
+  width: auto;
+  top: -20px;
+  right: -20px;
+}
+.web2 {
+  position: fixed;
+  height: 400px;
+  width: 400px; /* you need a fixed width for centering */
+  top: 15%;
+  left: 50%;
+  animation: fadin 2s linear forwards;
+}
+.web3 {
+  position: fixed;
+  height: 400px;
+  width: 400px; /* you need a fixed width for centering */
+  bottom: 15%;
+  right: 55%;
+  animation: fadin 3s linear forwards;
+}
+.web4 {
+  position: fixed;
+  height: 200px;
+  width: auto; /* you need a fixed width for centering */
+  top: -20px;
+  left: -20px;
+  animation: fadin 2s linear forwards;
+}
+@keyframes fadin {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  100% {
+    opacity: 1;
+    scale: 1.2;
+  }
+}
+
+@media (max-width: 450px) {
+  .auth-container {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .auth-left-panel,
+  .auth-right-panel {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .auth-right-panel {
+    max-width: none;
+  }
+
+  .avengers-logo {
+    width: 100%;
+    height: auto;
+  }
+  .spideyonWall,.blackwidow,.web4,
+  .spideyhang, .hawkeye,.starc-tower,.meteor-sky,
+  .ironman, .villan, .thor, .cap, .hulk,.miles,.deadpool-l, 
+  .gwen, .web2 {
+    display: none;
+  }
+  .auth-button-group{
+    flex-direction: row;
+    align-items: center;
+  }
+ 
+ .change-theme-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 15px;
+    padding: 0;
+  }
+
+  .changeThemeIcon {
+    font-size: 20px;
+  }
+
+  .spanText {
+    display: none; /* Hide text on smaller screens */
+  }
+ 
+}

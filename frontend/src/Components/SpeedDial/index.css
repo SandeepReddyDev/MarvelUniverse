@@ -1,0 +1,119 @@
+/* Floating Speed Dial Styling */
+.speed-dial-container {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+    
+
+  }
+  
+  
+  /* Floating Button Styling */
+  .custom-speed-dial {
+  
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .custom-speed-dial:hover {
+    transform: scale(1.1); /* Slight Zoom on Hover */
+   
+  }
+  
+  /* Floating Button Icon */
+  .speed-dial-icon {
+    color: white;
+    font-size: 30px;
+    transition: transform 0.3s ease-in-out;
+  }
+  @keyframes shadowPulse {
+    0% {
+      text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    }
+    25% {
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+    50% {
+      text-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00;
+    }
+    75% {
+      text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900;
+    }
+    100% {
+      text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    }
+  }
+  
+  .custom-speed-dial:hover .speed-dial-icon {
+    transform: rotate(450deg); /* Rotate on Hover */
+   
+  }
+
+  /* SpeedDial Actions */
+  .custom-speed-action {
+    background-color: #8a2be2 !important; /* BlueViolet */
+    color: white !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect for Actions */
+  .custom-speed-action:hover {
+    background-color: #a855f7 !important; /* Lighter Violet */
+    transform: translateY(-4px); /* Slight lift on hover */
+  }
+  
+  /* Icons inside SpeedDial Actions */
+  .action-icon {
+    font-size: 22px;
+    color: white;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .loader-page{
+    background-color: #120014;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader{
+    position: fixed;
+   height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background:radial-gradient(circle, #02c3f3, transparent,transparent);
+   animation: spin 1s linear infinite;
+    box-shadow: 0 0 20px rgba(2, 195, 243, 0.5), inset 0 0 20px rgba(2, 195, 243, 0.5);
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    90% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@media (max-widt:450px) {
+  .custom-speed-dial{
+    height: 40px;
+    width: 40px;
+  }
+  .speed-dial-icon{
+    font-size: 20px;
+  }
+}

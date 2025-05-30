@@ -1,0 +1,171 @@
+.chrono-wrapper {
+  padding: 2rem;
+  padding-top: 80px;
+   background: radial-gradient(circle at 30% 30%, #3d0155, #320048 40%, #1e002f 70%, #0d001a 90%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh !important;
+  color: white;
+  overflow-y: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chrono-title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #9300ee, #6b00f7, #ff00dd, #9036a2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.timeline-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.timeline-card:hover {
+  transform: scale(1.05);
+}
+.rc-card-title {
+display:none !important; 
+}
+.dIEUAi{
+  background-color: transparent !important;
+  border: none !important;
+}
+.fxxFxk {
+  overflow: auto; /* or scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.fxxFxk::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.chrono-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(133, 1, 1, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+   overflow: hidden;
+   z-index: 10;
+}
+.chrono-card:active {
+ 
+  box-shadow: 0 px 50px rgb(252, 2, 2);
+}
+
+.chrono-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(230, 36, 41, 0.4);
+}
+
+.chrono-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.chrono-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.chrono-card:hover .chrono-image {
+  transform: scale(1.2);
+}
+
+.chrono-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(21, 21, 21, 0.9), rgba(0, 0, 0, 0));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10px;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+.chrono-card:hover .chrono-overlay {
+  opacity: 1;
+}
+
+.chrono-movie-title {
+  color: #c605e3;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+ font-family: 'Montserrat', sans-serif;
+   transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+.iNzIyQ{
+ font-family: 'Montserrat', sans-serif !important;
+}
+.chrono-card:hover .chrono-movie-title {
+  transform: translateY(0);
+}
+/*background animation*/
+.star-sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 3s infinite ease-in-out;
+  box-shadow: 0 0 6px white;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+
+@media (max-width:450px){
+  .chrono-title{
+    font-size: 25px;
+  }
+  .cIuXvu, .cIuXvu, .icqGLu{
+    display: none !important;
+  }
+  .cIuXvu{
+    width: 100px !important;
+  }
+  .chrono-movie-title {
+    transform: translate(0) !important;
+  }
+}
