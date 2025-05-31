@@ -1,7 +1,7 @@
 .about-c {
   padding: 20px;
   height: 100%;
-  width: 100vw;
+  width: 100vw !important;
   background-color: #120014;
   overflow-y: auto; /* Changed from scroll to auto (scrollbar appears only if needed) */
   display: flex;
@@ -79,6 +79,7 @@
   margin-top: 20px; /* Add spacing between sections */
   text-align: center; /* Improves readability */
   width: 90%;
+    z-index: 5;
 }
 
 .marvel-vid {
@@ -97,8 +98,34 @@
   margin-bottom: 2rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   font-family: 'Montserrat', sans-serif;
+  z-index: 5;
+  transition: all 0.3s ease-in-out;
+}
+.dp-c {
+  position: fixed;
+  bottom: 0px;
+  left: 20px;
+  pointer-events: none; /* So it doesn't block clicks */
+  z-index: 0; /* Sends it behind everything */
+  overflow:hidden;
 }
 
+.dp {
+  position: fixed;
+  bottom: 0;
+height: 250px;
+  width: 100px;
+  opacity: 0.5;
+  animation: side 2s ease-in-out;
+}
+@keyframes side {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
 @media (max-width: 450px) {
   .about-headings {
     font-size: 2.5rem; /* Adjust font size for smaller screens */
@@ -106,8 +133,10 @@
   }
   .text-base{
     font-size: 1rem; /* Adjust font size for smaller screens */
+    text-align: center;
+    align-self: center;
   }
-  .spidey {
+  .spidey, .dp {
     display: none; /* Adjust size for smaller screens */
   }
 }

@@ -154,7 +154,20 @@ display:none !important;
   }
 }
 
-
+@media (max-width:770pc){
+  .chrono-title{
+    font-size: 30px;
+  }
+  .cIuXvu, .cIuXvu, .icqGLu{
+    display: none !important;
+  }
+  .cIuXvu{
+    width: 100px !important;
+  }
+  .chrono-movie-title {
+    transform: translate(0) !important;
+  }
+}
 @media (max-width:450px){
   .chrono-title{
     font-size: 25px;

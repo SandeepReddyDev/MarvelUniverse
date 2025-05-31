@@ -340,12 +340,12 @@
     transform: translateX(-350%);
   }
 }
-.deadpool-l {
+.leftpanel-img {
   bottom: -50px;
   left: 0;
   right: 0;
   width: 80%;
-  height: 300px;
+  height: 320px;
   animation: up 2s linear;
   align-self: center;
 }
@@ -700,7 +700,7 @@
   }
   .spideyonWall,.blackwidow,.web4,
   .spideyhang, .hawkeye,.starc-tower,.meteor-sky,
-  .ironman, .villan, .thor, .cap, .hulk,.miles,.deadpool-l, 
+  .ironman, .villan, .thor, .cap, .hulk,.miles,.leftpanel-img, 
   .gwen, .web2 {
     display: none;
   }

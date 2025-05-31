@@ -10,16 +10,16 @@ import "./home.css";
 
 const movieDetails = [
   {
-    id: 6,
-    title: "The Avengers",
+    id: 22,
+    title: "Avengers : Endgame",
     description:
-      "Earth's mightiest heroes unite to stop Loki and his alien army from conquering Earth.",
+      "The Avengers must gather the Infinity Stones to undo the destruction caused by Thanos in Infinity War.",
     genre: ["Action", "Sci-Fi"],
-    releaseYear: 2012,
+    releaseYear: 2019,
     duration: "2h 23m",
     ageRating: "U/A 13+",
     imageURL:
-      "https://i.pinimg.com/736x/db/50/8f/db508f30c513fc5b17392a404d0df7a5.jpg",
+      "https://i.pinimg.com/736x/a8/9d/3a/a89d3a1f1997eec0e62643cf1c40d098.jpg",
   },
   {
     id: 1,
@@ -31,7 +31,7 @@ const movieDetails = [
     duration: "2h 10m",
     ageRating: "U/A 13+",
     imageURL:
-      "https://i.pinimg.com/736x/72/89/6e/72896edbb0191b4f0864b520f48d693b.jpg",
+      "https://i.pinimg.com/736x/c8/4c/17/c84c172b36c1a7db4a54c681949cd466.jpg",
   },
   {
     id: 26,
@@ -52,7 +52,7 @@ const movieDetails = [
       "Loki embarks on a timeline-altering adventure after escaping with the Tesseract.",
     genre: ["Action", "Sci-Fi", "Fantasy"],
     releaseYear: 2021,
-    duration: "~50m per episode",
+    duration: "~EP : 50 mins",
     ageRating: "U/A 13+",
     imageURL:
       "https://i.pinimg.com/736x/e3/26/4b/e3264ba258c4e9ff8d92236d784a39f3.jpg",
@@ -156,9 +156,9 @@ const Home = ({ webSeries, timelineMovies, legacyMovies }) => {
                 WebkitImageRendering: "optimize-contrast",
               }}
             >
-              <div className="absolute bottom-0 left-0 m-6 bg-transparent  text-5xl text-white font-bold p-6 rounded-lg max-w-md  corousel-content">
+              <div className="absolute bottom-0 left-0 m-6 bg-transparent  text-white font-bold rounded-lg   ">
                 <h3 className="corousel-title">{movie.title}</h3>
-                <div className="text-gray-300 text-lg flex items-center gap-2 mt-3">
+                <div className="text-gray-300 text-lg flex items-center gap-2 mt-3 corousel-content">
                   <span className="font-bold  text-white text-lg">
                     {movie.releaseYear}
                   </span>
@@ -169,10 +169,10 @@ const Home = ({ webSeries, timelineMovies, legacyMovies }) => {
                 </div>
 
                 {/* Movie Description */}
-                <p className=" text-white text-lg mt-3 corousel-des">{movie.description}</p>
+                <p className=" text-white text-lg mt-3 corousel-des ">{movie.description}</p>
 
                 {/* Tags */}
-                <p className="mt-3   text-white text-sm flex gap-2 flex-wrap ">
+                <p className="mt-3   text-white text-sm flex gap-2 flex-wrap corousel-content ">
                   {movie.genre.map((genre) => (
                     <span
                       key={genre}
@@ -184,7 +184,7 @@ const Home = ({ webSeries, timelineMovies, legacyMovies }) => {
                 </p>
 
                 {/* Buttons */}
-                <div className="mt-5 flex items-center gap-3">
+                <div className=" flex items-start  gap-3">
                   <Link to={`/movie/${movie.id}`}>
                     <button className="courosel-watchnow-btn">Watch Now</button>
                   </Link>

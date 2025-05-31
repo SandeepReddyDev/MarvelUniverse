@@ -178,6 +178,15 @@ background-color: transparent;
   color: #fff;
 }
 
+@media (max-width: 770px) {
+   .character-card {
+    height: 150px;
+    width: 150px;
+  }
+  .hero-des{
+    font-size: 16px;
+  }
+}
 @media (max-width:450px) {
   .character-card {
     height: 100px;

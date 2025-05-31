@@ -6,22 +6,27 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors()); // Allow frontend to access backend
-app.use(express.json()); // Middleware for JSON parsing
+app.use(cors());
+app.use(express.json());
 
-// ✅ Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+// Root route to confirm server is running
+app.get('/', (req, res) => {
+  res.send('🎉 Marvel Movies API is Running!');
+});
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
-    console.log('✅ Connected to Database');
+    console.log('✅ Connected to MongoDB');
   })
   .catch(error => {
-    console.error('❌ Error connecting to DB:', error);
+    console.error('❌ MongoDB connection error:', error.message);
   });
 
-// ✅ API Endpoint to Fetch Data
+// API Endpoint
 app.get('/api/movies', async (req, res) => {
   try {
-    const db = mongoose.connection.db; // Get database reference
+    const db = mongoose.connection.db;
     const legacyMovies = await db.collection('LegacyMovies').find().toArray();
     const timelineMovies = await db.collection('TimelineMovies').find().toArray();
     const webSeries = await db.collection('WebSeries').find().toArray();
@@ -37,7 +42,6 @@ app.get('/api/movies', async (req, res) => {
   }
 });
 
-// ✅ Start Backend Server
 app.listen(port, () => {
   console.log(`🚀 Server is running on port ${port}`);
 });

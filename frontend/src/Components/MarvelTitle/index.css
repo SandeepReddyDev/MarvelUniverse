@@ -14,7 +14,6 @@
 }
 .title-container:hover {
   transform: scale(1.05);
- 
 }
 
 .title-container:hover .letter-m,
@@ -29,7 +28,7 @@
 
 /* Shared MARVEL title styles */
 .marvel-Title {
-  font-size: 15.5rem;
+  font-size: 12rem;
   font-weight: 900;
   margin: 0;
   font-family: sans-serif;
@@ -39,6 +38,7 @@
   color: transparent;
   z-index: 1;
   position: relative;
+  transition: font-size 0.2s ease-in;
 }
 
 /* Individual letters with unique backgrounds */
@@ -53,11 +53,7 @@
   background-size: cover;
   background-position: center;
 }
-.letter-a:hover {
-  transform: scale(1.1);
 
-  transition: all 0.1s ease-in-out;
-}
 .letter-r {
   background-image: url("https://i.pinimg.com/736x/6b/cd/97/6bcd978e2fc96100d4b29c866c702f6d.jpg");
   background-size: cover;
@@ -81,17 +77,31 @@
   background-size: cover;
   background-position: center;
 }
-
+@media (max-width: 770px) {
+    .letter-m,
+  .letter-a,
+  .letter-r,
+  .letter-v,
+  .letter-e,
+  .letter-l {
+    font-size: 6rem;
+  }
+  .title-container {
+    margin: 50px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+}
 @media (max-width: 450px) {
-  
-.title-container {
-  margin: 50px;
-     height: 100px;
+  .title-container {
+    margin: 50px;
+    height: 100px;
     justify-content: center;
     align-items: center;
   }
   .marvel-Title {
-    font-size: 10rem;
+   
     text-align: center;
   }
 
@@ -103,5 +113,4 @@
   .letter-l {
     font-size: 4rem;
   }
-  
 }

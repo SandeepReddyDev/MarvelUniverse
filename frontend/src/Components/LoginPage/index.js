@@ -165,14 +165,9 @@ const Authentication = () => {
   }
 
   // Then you can use:
-  const themeData = {
-    background,
-    imageURL,
-    theme: themeComponent,
-    button,
-  };
 
-  console.log(randomTheme, themeData);
+
+
 
 
   const signUp = async () => {
@@ -233,7 +228,7 @@ const ChangeTheme = ({ changetheme }) => {
             <h1 className='log-heading '>Hello, welcome!</h1>
             <p className=''>Step into a universe of heroes, villains, and epic tales — your Marvel journey begins now.</p>
           </div>
-          <img src={imageURL} alt="" className='deadpool-l' />
+          <img src={imageURL} alt="" className='leftpanel-img' />
         </div>
 
         <div className="auth-right-panel">
