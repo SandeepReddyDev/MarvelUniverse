@@ -135,7 +135,7 @@ const MovieCardsList = ({ prop, movieList }) => {
       </div>
       {filteredMovies.length === 0 ?
         <div className="empty-container">
-          <h1 className="heading-text-gradient">No Movies Found</h1>
+          <h1 className="heading-text">No Movies Found</h1>
           <img
             className="empty-image"
             src="https://i.postimg.cc/Y07CtXGw/Deadpool.png"

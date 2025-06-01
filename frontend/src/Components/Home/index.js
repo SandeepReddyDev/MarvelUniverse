@@ -199,7 +199,7 @@ const Home = ({ webSeries, timelineMovies, legacyMovies }) => {
         <div className=" mx-1 ">
           <div className="category-container px-4">
             {/* Category Heading */}
-            <h2 className="category-heading ">
+            <h2 className="home-category-heading ">
               Watch List—
               <span className="underline-effect"></span>
             </h2>
@@ -215,7 +215,7 @@ const Home = ({ webSeries, timelineMovies, legacyMovies }) => {
         <div className=" mx-1 ">
           <div className="category-container px-4">
             {/* Category Heading */}
-            <h2 className="category-heading">
+            <h2 className="home-category-heading">
               Favourites—
               <span className="underline-effect"></span>
             </h2>
@@ -231,7 +231,7 @@ const Home = ({ webSeries, timelineMovies, legacyMovies }) => {
       <div id="TimelineMovies" className=" mx-1 ">
         <div className="category-container px-4">
           {/* Category Heading */}
-          <h2 className="category-heading">
+          <h2 className="home-category-heading">
             Marvel Timeline Movies—
             <span className="underline-effect"></span>
           </h2>
@@ -246,7 +246,7 @@ const Home = ({ webSeries, timelineMovies, legacyMovies }) => {
       <div id="LegacyMovies" className=" mx-1 ">
         <div className="category-container px-4">
           {/* Category Heading */}
-          <h2 className="category-heading">
+          <h2 className="home-category-heading">
             Marvel Legacy Movies—
             <span className="underline-effect"></span>
           </h2>
@@ -260,7 +260,7 @@ const Home = ({ webSeries, timelineMovies, legacyMovies }) => {
       <div id="Webseries" className=" mx-1 ">
         <div className="category-container px-4">
           {/* Category Heading */}
-          <h2 className="category-heading">
+          <h2 className="home-category-heading">
             Marvel Series—
             <span className="underline-effect"></span>
           </h2>

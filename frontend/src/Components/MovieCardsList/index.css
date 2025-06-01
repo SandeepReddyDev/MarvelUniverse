@@ -120,7 +120,8 @@
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
+
   gap: 2rem;
   padding: 20px;
   background-color: transparent;
@@ -128,8 +129,8 @@
   width: 100vw;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: start;
+  align-items: start;
+
 }
 
 .movie-card-item {
@@ -290,6 +291,9 @@
     height: 250px;
     width: 180px;
   }
+  .empty-image{
+    width: 300px;
+  }
 }
 @media (max-width: 450px) {
   .search-header-container {
@@ -348,5 +352,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.empty-image{
+  width: 200px;
+  height: 200px;
+  object-fit: fill;
 }
 }

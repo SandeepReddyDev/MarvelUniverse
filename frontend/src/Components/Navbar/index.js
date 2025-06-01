@@ -72,15 +72,14 @@ export default function Navbar() {
           className="absolute top-4 right-4 text-white"
           onClick={() => setIsOpen(false)}
         >
-          <X className="w-6 h-6" />
+          <X className="w-6 h-6 close-menu" />
         </button>
-        <ul className="flex flex-col items-center space-y-6 mt-20 text-lg">
+        <ul className="flex flex-col items-center space-y-6 mt-20 text-md">
           {[
             { path: "/", label: "Home" },
             { path: "/about", label: "About" },
             { path: "/allmovies&series", label: "Movies" },
-            { path: "/favourites", label: "Favourites" },
-            { path: "/watchlist", label: "Saves" },
+           
           ].map(({ path, label }) => (
             <li key={path} onClick={() => setIsOpen(false)}>
               <Link

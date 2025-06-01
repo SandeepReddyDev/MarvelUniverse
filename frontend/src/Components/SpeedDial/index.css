@@ -116,4 +116,8 @@
   .speed-dial-icon{
     font-size: 20px;
   }
+  .speed-dial-container{
+    bottom: 36px;
+    right: 36px;
+  }
 }

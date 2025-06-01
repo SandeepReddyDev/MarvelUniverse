@@ -18,7 +18,6 @@ const MeteorSky = () => {
     const left = Math.random() * 100;  // percentage across width
     const top = Math.random() * 30;    // top 30% of screen
     const size = Math.random() * 2 + 1; // size between 1-3px
-
     return (
       <div
         key={index}
@@ -48,7 +47,6 @@ const RainAnimation = () => {
     </div>
   );
 };
-
 const DeadpoolTheme = () => {
   return (
     <div id="deadpool">
@@ -71,7 +69,6 @@ const DeadpoolTheme = () => {
     </div>
   )
 }
-
 
 const Avengers = () => {
   return (
@@ -114,14 +111,27 @@ const SpidermanTheme = () => {
 
 const Authentication = () => {
   const [index, setIndex] = useState(0);
+  const [register, setRegister] = useState("no")
+
+  const Register = () => {
+    if (register === "no") {
+      setRegister("yes")
+    }
+    else {
+      setRegister("no")
+    }
+
+  }
 
   const [email, setEmail] = useState('');
+  const [Error, setError] = useState("False")
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   const themes = ["avengers", "deadpool", "spiderman"];
- 
+
   const randomTheme = themes[index];
   let background = "";
   let imageURL = "";
@@ -163,20 +173,20 @@ const Authentication = () => {
       button = "#3A3A3A"
       break;
   }
-
-  // Then you can use:
-
-
-
-
-
+  // Then you can use
   const signUp = async () => {
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      alert('User created!');
-    } catch (err) {
-      alert(err.message);
+    if (name === '') {
+      setError("True")
     }
+    else {
+      try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        alert('User created!');
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+
   };
   const logIn = async () => {
     try {
@@ -199,17 +209,17 @@ const Authentication = () => {
   // ✅ Return corrected JSX here
   if (user) return null; // Prevent showing the login screen if already logged in
 
-const ChangeTheme = ({ changetheme }) => {
-  return (
-    <div className="theme-selector">
-      <button className="change-theme-button" onClick={changetheme}>
-         <span className="spanText">Change Theme</span>
-        <MdOutlineModeEditOutline className="changeThemeIcon" />
-       
-      </button>
-    </div>
-  );
-};
+  const ChangeTheme = ({ changetheme }) => {
+    return (
+      <div className="theme-selector">
+        <button className="change-theme-button" onClick={changetheme}>
+          <span className="spanText">Change Theme</span>
+          <MdOutlineModeEditOutline className="changeThemeIcon" />
+
+        </button>
+      </div>
+    );
+  };
 
   const ChangingTheme = () => {
     setIndex((prevIndex) => (prevIndex >= 2 ? 0 : prevIndex + 1));
@@ -219,9 +229,9 @@ const ChangeTheme = ({ changetheme }) => {
 
   return (
     <div className={`login-page ${bg}`} >
-     {themeComponent}
-           <ChangeTheme changetheme={ChangingTheme} />
-        <div className={`auth-container ${authContainer} `}>
+      {themeComponent}
+      <ChangeTheme changetheme={ChangingTheme} />
+      <div className={`auth-container ${authContainer} `}>
 
         <div className="auth-left-panel">
           <div className='text-center'>
@@ -232,6 +242,13 @@ const ChangeTheme = ({ changetheme }) => {
         </div>
 
         <div className="auth-right-panel">
+          {register === "yes" ?
+            <input
+              type="text"
+              placeholder="User Name"          
+              onChange={(e) => setName(e.target.value)}
+              className="auth-input"
+            /> : null}
           <input
             type="email"
             placeholder="Email address"
@@ -246,6 +263,7 @@ const ChangeTheme = ({ changetheme }) => {
             onChange={(e) => setPassword(e.target.value)}
             className="auth-input"
           />
+          {Error === "True" ? <span className='text-red-600 text-sm '>**Please Fill all mandatory feilds</span> : null}
           <div className="auth-options">
             <label>
               <input type="checkbox" /> Remember me
@@ -254,8 +272,8 @@ const ChangeTheme = ({ changetheme }) => {
           </div>
 
           <div className="auth-button-group">
-            <button onClick={logIn} className={`login-btns ${button}`} >Login</button>
-            <button onClick={signUp} className={`login-btns ${button}`} >Sign up</button>
+            {register == "no" ? <button onClick={logIn} className={`login-btns ${button}`} >Login</button> : <button onClick={signUp} className={`login-btns ${button}`} >Sign up</button>}
+            {register == "no" ? <button onClick={Register} className={`login-btns ${button}`} >Register</button> : <button onClick={Register} className={`login-btns ${button}`} >Login</button>}
           </div>
 
           <div className="social-login flex flex-col items-center">

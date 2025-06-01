@@ -1,21 +1,20 @@
 /* Full-screen overlay */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+ margin:auto;
   width: 100vw;
   height: 100vh;
   background-color:transparent; /* Dark semi-transparent background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   z-index: 1000; /* Ensure it appears above everything else */
 }
 
 /* Centered modal with video */
 .modal-content {
-  position: relative;
+
   margin: auto;
+  height: 250px;
+ width: 450px;
   background: transparent;
   padding: 10px;
   border-radius: 10px;
@@ -41,4 +40,21 @@
 
 .close-btn:hover {
   background: rgb(110, 5, 102);
+}
+
+.react-player {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+.react-player {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+@media (max-width : 450px){
+  .modal-content{
+    height: 200px;
+    width: 350px;
+  }
 }

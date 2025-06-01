@@ -79,7 +79,7 @@
   margin-top: 20px; /* Add spacing between sections */
   text-align: center; /* Improves readability */
   width: 90%;
-    z-index: 5;
+   
 }
 
 .marvel-vid {
@@ -98,7 +98,7 @@
   margin-bottom: 2rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
   font-family: 'Montserrat', sans-serif;
-  z-index: 5;
+  
   transition: all 0.3s ease-in-out;
 }
 .dp-c {

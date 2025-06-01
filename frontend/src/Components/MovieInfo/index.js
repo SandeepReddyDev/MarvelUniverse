@@ -69,7 +69,7 @@ const MovieDetails = ({ AllMovies }) => {
             <h1 className="movie-title">{movie.title}</h1>
 
             <p className='movie-info-des' >
-              {movie.description}
+              {movie.description}  {movie.description}
             </p>
 
 
@@ -134,25 +134,23 @@ const MovieDetails = ({ AllMovies }) => {
                 )}
               </button>
             </div>
-            {/* Trailer Modal */}
-            <TrailerModal
-              videoUrl={movie.trailerLink} // Replace with actual trailer link
-              isOpen={isModalOpen}
-              onClose={closeModal}
-            />
+            <div className="modal-c">
+              <TrailerModal
+                videoUrl={movie.trailerLink}
+                isOpen={isModalOpen}
+                onClose={closeModal}
+              />
+            </div>
+
           </div>
         </div>
       </div>
       <div className=" mx-1 ">
-        <div className="category-container px-4 bg-transparent">
-          {/* Category Heading */}
+        <div className="flex justify-start px1 bg-transparent">
           <h2 className="category-heading">
-            Similar Movies
-
+            Similar Movies—
           </h2>
-
         </div>
-
         <div className="similar-movies-c  "> <Slider movieslist={similarmovies} /></div>
 
       </div>

@@ -1,5 +1,5 @@
 import { React } from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import "./index.css";
 const IconicCharactersList = [
     {
@@ -60,6 +60,18 @@ const IconicCharacters = () => {
         setSelectedCharacter(null);
     };
 
+    useEffect(() => {
+        if (selectedCharacter) {
+            document.body.style.overflow = 'hidden'; // Disable background scroll
+        } else {
+            document.body.style.overflow = 'auto'; // Re-enable scroll when modal closes
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto'; // Clean up on unmount
+        };
+    }, [selectedCharacter]);
+
     return (
         <div className="iconic-characters-c">
             {IconicCharactersList.map((character, index) => (
@@ -67,10 +79,9 @@ const IconicCharacters = () => {
                     key={index}
                     className="character-card"
                     style={{
-
-                        border: `5px solid ${character.color[0]}`, boxShadow: `0 0 30px ${character.color[0]}`,
+                        border: `5px solid ${character.color[0]}`,
+                        boxShadow: `0 0 30px ${character.color[0]}`,
                     }}
-
                     onClick={() => onClickCard(character)}
                 >
                     <img src={character.image1} alt={character.name} className="character-image" />
@@ -78,21 +89,26 @@ const IconicCharacters = () => {
             ))}
 
             {selectedCharacter && (
-                <div className="hero-modal"                >
-                    <div className="hero-card"
-                     style={{ backgroundImage: `linear-gradient(45deg, ${selectedCharacter.color[0]}, transparent,${selectedCharacter.color[1]})` }}>
-                        <button className="close-btn" onClick={closeModal}>&times;</button>
+                <div className="hero-modal">
+                    <div
+                        className="hero-card"
+                        style={{
+                            backgroundImage: `linear-gradient(45deg, ${selectedCharacter.color[0]}, transparent, ${selectedCharacter.color[1]})`,
+                        }}
+                    >
+                        <button className="close-btn" onClick={closeModal}>
+                            &times;
+                        </button>
                         <div className="hero-content">
-                            <h1>{selectedCharacter.name}</h1>
-                            <p className='hero-des'>{selectedCharacter.description}</p>
+                            <h1 className='hero-name'>{selectedCharacter.name}</h1>
+                            <p className="hero-des">{selectedCharacter.description}</p>
                         </div>
 
                         <div className="hero-image">
-                            <img src={selectedCharacter.image2} alt={selectedCharacter.name} style={{maxWidth:"500px"}}/>
+                            <img src={selectedCharacter.image2} alt={selectedCharacter.name} style={{ maxWidth: '500px' }} />
                         </div>
                     </div>
                 </div>
-
             )}
         </div>
     );

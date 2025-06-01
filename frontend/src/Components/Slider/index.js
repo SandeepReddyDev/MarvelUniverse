@@ -51,7 +51,7 @@ const Slider = ({ movieslist }) => {
               <img src={movie.image2} alt={movie.title} className="movie-image" />
 
               <div className="movie-info">
-                <div style={{ overflow: 'hidden', borderRadius: '20px' }}>
+                <div style={{ overflow: 'hidden' }}>
                   <img src={movie.image} alt={movie.title} className="info image2" />
                 </div>
 

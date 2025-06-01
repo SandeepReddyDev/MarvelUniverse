@@ -60,7 +60,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://marvelmovies-api-server.onrender.com/api/movies");
+        const response = await fetch("https://marvelmovies-fullstack-project.onrender.com/api/movies");
         const data = await response.json();
         setLegacyMovies(data.legacyMovies);
         setTimelineMovies(data.timelineMovies);
