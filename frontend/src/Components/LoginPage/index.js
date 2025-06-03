@@ -142,7 +142,7 @@ const Authentication = () => {
 
   switch (randomTheme) {
     case "avengers":
-      imageURL = "https://i.postimg.cc/L6rNBJ08/assemble.png"; // add your desired image path
+      imageURL = "https://i.postimg.cc/fWjzf0CW/Avengers-Logo.png"; // add your desired image path
       themeComponent = <Avengers />;
       button = "avengers-btn"
       authContainer = "auth-container-bg-avengers"
