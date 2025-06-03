@@ -110,7 +110,7 @@ const SpidermanTheme = () => {
 
 
 const Authentication = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(1);
   const [register, setRegister] = useState("no")
 
   const Register = () => {
