@@ -182,6 +182,7 @@ const Authentication = () => {
       try {
         await createUserWithEmailAndPassword(auth, email, password);
         alert('User created!');
+        navigate('/')  // 👈 Redirect to Home
       } catch (err) {
         alert(err.message);
       }
