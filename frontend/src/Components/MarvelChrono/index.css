@@ -65,7 +65,7 @@ display:none !important;
 
 .chrono-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(230, 36, 41, 0.4);
+  box-shadow: 0 8px 100px rgba(230, 36, 41, 0.4);
 }
 
 .chrono-image-wrapper {
@@ -83,7 +83,7 @@ display:none !important;
 }
 
 .chrono-card:hover .chrono-image {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
 .chrono-overlay {
