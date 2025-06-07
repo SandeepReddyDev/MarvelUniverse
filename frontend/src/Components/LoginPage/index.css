@@ -701,11 +701,10 @@
   .gwen, .web2 {
     display: none;
   }
-  .auth-button-group{
-    flex-direction: row;
+ .auth-button-group{
+    flex-direction: column;
     align-items: center;
   }
- 
  .change-theme-button {
     position: fixed;
     top: 10px;
