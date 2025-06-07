@@ -264,27 +264,21 @@ const Authentication = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="auth-input"
           />
-          {Error === "True" ? <span className='text-red-600 text-sm '>**Please Fill all mandatory feilds</span> : null}
+         {Error === "True" ? <span className='text-red-600 text-sm m-0 p-0'>**Please fill all mandatory feilds**</span> : null}
           <div className="auth-options">
-            <label>
+            <label className='text-white '>
               <input type="checkbox" /> Remember me
             </label>
-            <a href="#" className="forgot-password">Forgot password?</a>
+            <a href="#"  className="forgot-password">Forgot password?</a>
           </div>
 
           <div className="auth-button-group">
             {register == "no" ? <button onClick={logIn} className={`login-btns ${button}`} >Login</button> : <button onClick={signUp} className={`login-btns ${button}`} >Sign up</button>}
-            {register == "no" ? <button onClick={Register} className={`login-btns ${button}`} >Register</button> : <button onClick={Register} className={`login-btns ${button}`} >Login</button>}
+            {register == "no" ? <div className='text-sm'><span  className="forgot-password">Don't have an account ? </span><span onClick={Register} className='font-bold text-white hover:text-blue-400 '>Create an account</span></div> :null}
+            {register == "no" ? <button onClick={Register} className={`login-btns ${button}`} >Register</button> : <button onClick={Register} className={`back-btn ${button}`} ><IoArrowBackCircleOutline/></button>}
           </div>
 
-          <div className="social-login flex flex-col items-center">
-            <p>FOLLOW</p>
-            <div className="flex flex-row gap-4 justify-centeritems-center">
-              <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook" className='icons' />
-              <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter" className='icons' />
-              <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" className='icons' />
-            </div>
-          </div>
+         
         </div>
 
       </div>
