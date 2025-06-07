@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase';
 import { MdOutlineModeEditOutline } from "react-icons/md";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
+
 
 import {
   createUserWithEmailAndPassword,
@@ -142,7 +144,7 @@ const Authentication = () => {
 
   switch (randomTheme) {
     case "avengers":
-      imageURL = "https://i.postimg.cc/fWjzf0CW/Avengers-Logo.png"; // add your desired image path
+      imageURL = "https://i.postimg.cc/7ZgYfk66/Avengers.png"; // add your desired image path
       themeComponent = <Avengers />;
       button = "avengers-btn"
       authContainer = "auth-container-bg-avengers"
@@ -182,7 +184,7 @@ const Authentication = () => {
       try {
         await createUserWithEmailAndPassword(auth, email, password);
         alert('User created!');
-        navigate('/')  // 👈 Redirect to Home
+         navigate('/')  // 👈 Redirect to Home
       } catch (err) {
         alert(err.message);
       }
@@ -264,7 +266,7 @@ const Authentication = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="auth-input"
           />
-         {Error === "True" ? <span className='text-red-600 text-sm m-0 p-0'>**Please fill all mandatory feilds**</span> : null}
+          {Error === "True" ? <span className='text-red-600 text-sm m-0 p-0'>**Please fill all mandatory feilds**</span> : null}
           <div className="auth-options">
             <label className='text-white '>
               <input type="checkbox" /> Remember me
@@ -278,7 +280,7 @@ const Authentication = () => {
             {register == "no" ? <button onClick={Register} className={`login-btns ${button}`} >Register</button> : <button onClick={Register} className={`back-btn ${button}`} ><IoArrowBackCircleOutline/></button>}
           </div>
 
-         
+        
         </div>
 
       </div>
